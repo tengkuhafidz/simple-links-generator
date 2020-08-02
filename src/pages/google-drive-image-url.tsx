@@ -25,6 +25,7 @@ const GoogleDriveImageUrl: React.FC = () => {
     } else {
       const generatedUrl = generateGDriveImageUrl(inputUrl)
       setGeneratedUrl(generatedUrl)
+      navigator.clipboard.writeText(generatedUrl)
     }
   }
 

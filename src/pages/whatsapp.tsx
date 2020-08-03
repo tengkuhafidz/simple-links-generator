@@ -1,17 +1,12 @@
 import React from 'react'
-import SEO from '../components/seo'
-import Hero from '../components/hero'
-import Layout from '../components/layout'
+import ConstructorLayout from '../components/Layouts/constructor-layout'
 
 const Whatsapp: React.FC = () => {
   return (
-    <Layout displayHomeLink={true}>
-      <SEO />
-      <Hero
-        title="Whatsapp URL Generator"
-        subtitle="Easily generate Whatsapp url based on your message and contact details"
-      />
-    </Layout>
+    <ConstructorLayout
+      title="Whatsapp URL Generator"
+      description="Easily generate Whatsapp url based on your message and contact details"
+    ></ConstructorLayout>
   )
 }
 

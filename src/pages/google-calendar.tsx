@@ -1,17 +1,12 @@
 import React from 'react'
-import SEO from '../components/seo'
-import Hero from '../components/hero'
-import Layout from '../components/layout'
+import ConstructorLayout from '../components/Layouts/constructor-layout'
 
 const GoogleCalendar: React.FC = () => {
   return (
-    <Layout displayHomeLink={true}>
-      <SEO />
-      <Hero
-        title="Google Calendar URL Generator"
-        subtitle="Easily generate Google Calendar url based on your event details"
-      />
-    </Layout>
+    <ConstructorLayout
+      title="Google Calendar URL Generator"
+      description="Easily generate Google Calendar url based on your event details"
+    ></ConstructorLayout>
   )
 }
 

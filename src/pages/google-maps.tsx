@@ -1,17 +1,12 @@
 import React from 'react'
-import SEO from '../components/seo'
-import Hero from '../components/hero'
-import Layout from '../components/layout'
+import ConstructorLayout from '../components/Layouts/constructor-layout'
 
 const GoogleMaps: React.FC = () => {
   return (
-    <Layout displayHomeLink={true}>
-      <SEO />
-      <Hero
-        title="Google Maps URL Generator"
-        subtitle="Easily generate Google Maps url based on your location details"
-      />
-    </Layout>
+    <ConstructorLayout
+      title="Google Maps URL Generator"
+      description="Easily generate Google Maps url based on your location details"
+    ></ConstructorLayout>
   )
 }
 

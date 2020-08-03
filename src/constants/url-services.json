@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Whatsapp",
+    "iconClass": "fab fa-whatsapp",
+    "path": "whatsapp"
+  },
+  {
+    "title": "Telegram",
+    "iconClass": "fab fa-telegram-plane",
+    "path": "telegram"
+  },
+  {
+    "title": "Twitter",
+    "iconClass": "fab fa-twitter",
+    "path": "twitter"
+  },
+  {
+    "title": "Email",
+    "iconClass": "fas fa-envelope",
+    "path": "email"
+  },
+  {
+    "title": "SMS",
+    "iconClass": "fas fa-sms",
+    "path": "sms"
+  },
+  {
+    "title": "Phone Call",
+    "iconClass": "fas fa-phone-volume",
+    "path": "phone-call"
+  },
+  {
+    "title": "Google Maps",
+    "iconClass": "fas fa-map-marked-alt",
+    "path": "google-maps"
+  },
+  {
+    "title": "Google Calendar",
+    "iconClass": "fas fa-calendar-alt",
+    "path": "google-calendar"
+  },
+  {
+    "title": "Google Drive Image Url",
+    "iconClass": "fab fa-google-drive",
+    "path": "google-drive-image"
+  }
+]

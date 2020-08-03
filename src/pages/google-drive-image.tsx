@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import SEO from '../components/seo'
-import Hero from '../components/hero'
-import Layout from '../components/layout'
 import GenerateButton from '../components/Generator/generate-button'
 import GeneratedUrl from '../components/Generator/generated-url'
 import Toast from '../components/Generator/toast'
+import ConstructorLayout from '../components/Layouts/constructor-layout'
 import { generateGDriveImageUrl } from '../services/google-drive-image-service'
 
 const GoogleDriveImageUrl: React.FC = () => {
@@ -45,12 +43,10 @@ const GoogleDriveImageUrl: React.FC = () => {
   }
 
   return (
-    <Layout displayHomeLink={true}>
-      <SEO />
-      <Hero
-        title="Google Drive Image URL Generator"
-        subtitle="Easily generate image url based on Google Drive image shareable link"
-      />
+    <ConstructorLayout
+      title="Google Drive Image URL Generator"
+      description="Easily generate image url based on Google Drive image shareable link"
+    >
       <input
         className="shadow appearance-none border rounded-lg w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="gdrive-url"
@@ -62,7 +58,7 @@ const GoogleDriveImageUrl: React.FC = () => {
       <GenerateButton handleClick={handleClick} />
       <GeneratedUrl url={generatedUrl} handleCopy={handleCopy} />
       <Toast isVisible={toastVisible} />
-    </Layout>
+    </ConstructorLayout>
   )
 }
 

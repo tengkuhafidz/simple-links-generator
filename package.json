@@ -1,7 +1,7 @@
 {
   "name": "simple-links-generator",
   "private": true,
-  "description": "Easily generate useful/deep links based on the information you know",
+  "description": "Easily construct useful/deep links based on the information you know",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
-    title: 'Useful Links Generator',
-    titleTemplate: '%s | Links Generator',
-    description: 'A helper page that generates useful links based on user input',
+    title: 'Simple Url Constructor',
+    titleTemplate: '%s | Url Constructor',
+    description: 'A helper page that constructs useful links based on user input',
     author: 'Fidz.Dev',
     url: 'https://fidz.dev', // No trailing slash allowed!
     image: '/app-banner.png', // Path to your image you placed in the 'static' folder
@@ -17,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Links Generator`,
-        short_name: `Links Generator`,
+        name: `Simple URL Constructor`,
+        short_name: `URL Constructor`,
         start_url: `/`,
         background_color: `#F7FAFC`,
         theme_color: `#2B6CB0`,

@@ -9,7 +9,7 @@ const changeBaseUrl = (inputUrl: string) => {
   return BASE_URL + imageId
 }
 
-export const generateGDriveImageUrl = (inputUrl: string) => {
+export const constructGDriveImageUrl = (inputUrl: string) => {
   if (inputUrl.includes('id=')) {
     return replaceOpenWithUc(inputUrl)
   }

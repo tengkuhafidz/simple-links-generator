@@ -1,6 +1,6 @@
-# Simple Links Generator
+# Simple URL Constructor
 
-Easily generate useful links by inputting information that you already know 
+Easily construct useful links by inputting information that you already know
 
 ## Getting Started 🚀
 

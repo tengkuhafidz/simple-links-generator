@@ -13,8 +13,8 @@ const Home = () => {
 
   return (
     <HomeLayout
-      title="Simple URL Generator"
-      description="Easily generate useful/deep links by filling in the information you know"
+      title="Simple URL Constructor"
+      description="Easily construct useful/deep links by filling in the information you know"
     >
       <div className="grid md:grid-cols-3 gap-12">{renderLinkTypes()}</div>
     </HomeLayout>

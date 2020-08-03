@@ -5,7 +5,7 @@ interface Props {
   handleCopy: (url: string) => void
 }
 
-const GeneratedUrl: React.FC<Props> = ({ url, handleCopy }) => {
+const ConstructedUrl: React.FC<Props> = ({ url, handleCopy }) => {
   const navigateToUrl = () => {
     if (window !== undefined) {
       window.open(url, '_blank')
@@ -38,4 +38,4 @@ const GeneratedUrl: React.FC<Props> = ({ url, handleCopy }) => {
   )
 }
 
-export default GeneratedUrl
+export default ConstructedUrl

@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import ConstructButton from '../components/Constructor/construct-button'
-import ConstructedUrl from '../components/Constructor/constructed-url'
-import Toast from '../components/Constructor/toast'
 import ConstructorLayout from '../components/Layouts/constructor-layout'
+import { handleCopyConstructedUrl } from '../services/common-service'
 import { constructGDriveImageUrl } from '../services/google-drive-image-service'
 
 const GoogleDriveImageUrl: React.FC = () => {
@@ -11,34 +9,16 @@ const GoogleDriveImageUrl: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState(null)
   const [toastVisible, setToastVisible] = useState(false)
 
-  const displayToast = () => {
-    setToastVisible(true)
-    setTimeout(() => {
-      setToastVisible(false)
-    }, 4000)
-  }
-
-  const copyToClipboard = (textToBeCopied: string) => {
-    if (navigator !== undefined) {
-      navigator.clipboard.writeText(textToBeCopied)
-    }
-  }
-
-  const handleCopy = (url: string) => {
-    copyToClipboard(url)
-    displayToast()
-  }
-
-  const handleClick = () => {
+  const handleConstructButtonClick = () => {
     setErrorMessage(null)
     if (!inputUrl) {
       setErrorMessage('Please input a valid Google Drive Shareable URL')
       setConstructedUrl(null)
     } else {
       setToastVisible(false)
-      const constructdUrl = constructGDriveImageUrl(inputUrl)
-      setConstructedUrl(constructdUrl)
-      handleCopy(constructdUrl)
+      const constructedUrl = constructGDriveImageUrl(inputUrl)
+      setConstructedUrl(constructedUrl)
+      handleCopyConstructedUrl(constructedUrl, setToastVisible)
     }
   }
 
@@ -46,6 +26,10 @@ const GoogleDriveImageUrl: React.FC = () => {
     <ConstructorLayout
       title="Google Drive Image URL Constructor"
       description="Easily construct image url based on Google Drive image shareable link"
+      url={constructedUrl}
+      toastVisible={toastVisible}
+      handleClick={handleConstructButtonClick}
+      handleCopy={() => handleCopyConstructedUrl(constructedUrl, setToastVisible)}
     >
       <input
         className="shadow appearance-none border rounded-lg w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -55,9 +39,6 @@ const GoogleDriveImageUrl: React.FC = () => {
         onChange={(e) => setInputUrl(e.target.value)}
       />
       <p className="text-red-600 text-left ml-3">{errorMessage}</p>
-      <ConstructButton handleClick={handleClick} />
-      <ConstructedUrl url={constructedUrl} handleCopy={handleCopy} />
-      <Toast isVisible={toastVisible} />
     </ConstructorLayout>
   )
 }

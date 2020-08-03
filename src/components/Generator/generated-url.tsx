@@ -2,20 +2,19 @@ import React from 'react'
 
 interface Props {
   url: string
+  handleCopy: (url: string) => void
 }
 
-const GeneratedUrl: React.FC<Props> = ({ url }) => {
+const GeneratedUrl: React.FC<Props> = ({ url, handleCopy }) => {
   const navigateToUrl = () => {
     if (window !== undefined) {
       window.open(url, '_blank')
     }
   }
 
-  const copyUrl = (e) => {
+  const handleClick = (e) => {
     e.stopPropagation()
-    if (navigator !== undefined) {
-      navigator.clipboard.writeText(url)
-    }
+    handleCopy(url)
   }
   if (!url) return <></>
   return (
@@ -25,8 +24,8 @@ const GeneratedUrl: React.FC<Props> = ({ url }) => {
         onClick={navigateToUrl}
       >
         <span
-          className="flex rounded-full bg-gray-600 uppercase px-2 py-2 text-xs font-bold mr-3 hover:bg-blue-600"
-          onClick={(e) => copyUrl(e)}
+          className="flex rounded-full bg-gray-600 uppercase px-2 py-2 text-xs font-bold mr-3 hover:bg-blue-500"
+          onClick={(e) => handleClick(e)}
         >
           Copy Url &nbsp;<i className="fas fa-copy"></i>
         </span>

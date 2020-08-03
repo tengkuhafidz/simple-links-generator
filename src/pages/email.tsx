@@ -3,16 +3,16 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
-const Whatsapp: React.FC = () => {
+const Email: React.FC = () => {
   return (
     <Layout displayHomeLink={true}>
       <SEO />
       <Hero
-        title="Whatsapp URL Generator"
-        subtitle="Easily generate Whatsapp url based on your message and contact details"
+        title="Email URL Generator"
+        subtitle="Easily generate email url based on your email address, subject and message"
       />
     </Layout>
   )
 }
 
-export default Whatsapp
+export default Email

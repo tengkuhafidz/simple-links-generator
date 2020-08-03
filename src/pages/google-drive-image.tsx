@@ -5,19 +5,13 @@ import Layout from '../components/layout'
 import GenerateButton from '../components/Generator/generate-button'
 import GeneratedUrl from '../components/Generator/generated-url'
 import Toast from '../components/Generator/toast'
+import { generateGDriveImageUrl } from '../services/google-drive-image-service'
 
 const GoogleDriveImageUrl: React.FC = () => {
   const [inputUrl, setInputUrl] = useState(null)
   const [generatedUrl, setGeneratedUrl] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
   const [toastVisible, setToastVisible] = useState(false)
-
-  const generateGDriveImageUrl = (inputUrl) => {
-    const urlPaths = inputUrl.split('/')
-    const imageId = urlPaths[urlPaths.length - 2]
-    const BASE_URL = 'https://drive.google.com/uc?id='
-    return BASE_URL + imageId
-  }
 
   const displayToast = () => {
     setToastVisible(true)
@@ -51,7 +45,7 @@ const GoogleDriveImageUrl: React.FC = () => {
   }
 
   return (
-    <Layout>
+    <Layout displayHomeLink={true}>
       <SEO />
       <Hero
         title="Google Drive Image URL Generator"

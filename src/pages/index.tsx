@@ -3,23 +3,39 @@ import React from 'react'
 import SEO from '../components/seo'
 import Card from '../components/card'
 import Hero from '../components/hero'
+import Layout from '../components/layout'
 
 const Home = () => {
   const linkTypes = [
     {
       title: 'Whatsapp',
-      iconClass: 'fab fa-whatsapp-square',
+      iconClass: 'fab fa-whatsapp',
       path: 'whatsapp',
     },
     {
       title: 'Telegram',
-      iconClass: 'fab fa-telegram',
+      iconClass: 'fab fa-telegram-plane',
       path: 'telegram',
     },
     {
       title: 'Twitter',
-      iconClass: 'fab fa-twitter-square',
+      iconClass: 'fab fa-twitter',
       path: 'twitter',
+    },
+    {
+      title: 'Email',
+      iconClass: 'fas fa-envelope-open',
+      path: 'email',
+    },
+    {
+      title: 'SMS',
+      iconClass: 'fas fa-sms',
+      path: 'sms',
+    },
+    {
+      title: 'Phone Call',
+      iconClass: 'fas fa-phone-volume',
+      path: 'phone-call',
     },
     {
       title: 'Google Maps',
@@ -34,7 +50,7 @@ const Home = () => {
     {
       title: 'Google Drive Image Url',
       iconClass: 'fab fa-google-drive',
-      path: 'google-drive-image-url',
+      path: 'google-drive-image',
     },
   ]
 
@@ -45,16 +61,14 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <Layout displayHomeLink={false}>
       <SEO />
-      <div className="text-center max-w-xs md:max-w-screen-xl mx-auto py-16">
-        <Hero
-          title="Links Generator"
-          subtitle="Easily generate useful/deep links by filling in the information you know"
-        />
-        <div className="grid md:grid-cols-3 gap-8">{renderLinkTypes()}</div>
-      </div>
-    </div>
+      <Hero
+        title="Links Generator"
+        subtitle="Easily generate useful/deep links by filling in the information you know"
+      />
+      <div className="grid md:grid-cols-3 gap-12">{renderLinkTypes()}</div>
+    </Layout>
   )
 }
 

@@ -3,16 +3,16 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
-const Whatsapp: React.FC = () => {
+const Twitter: React.FC = () => {
   return (
     <Layout displayHomeLink={true}>
       <SEO />
       <Hero
-        title="Whatsapp URL Generator"
-        subtitle="Easily generate Whatsapp url based on your message and contact details"
+        title="Twitter URL Generator"
+        subtitle="Easily generate Twitter url based on the tweet and hashtag that you want"
       />
     </Layout>
   )
 }
 
-export default Whatsapp
+export default Twitter

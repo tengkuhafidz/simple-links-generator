@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const Telegram: React.FC = () => {
   return (
-    <Layout>
+    <Layout displayHomeLink={true}>
       <SEO />
       <Hero
         title="Telegram URL Generator"

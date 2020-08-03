@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const GoogleMaps: React.FC = () => {
   return (
-    <Layout>
+    <Layout displayHomeLink={true}>
       <SEO />
       <Hero
         title="Google Maps URL Generator"

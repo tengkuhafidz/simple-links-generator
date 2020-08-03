@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const GoogleCalendar: React.FC = () => {
   return (
-    <Layout>
+    <Layout displayHomeLink={true}>
       <SEO />
       <Hero
         title="Google Calendar URL Generator"

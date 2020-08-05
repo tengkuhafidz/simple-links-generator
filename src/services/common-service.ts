@@ -11,10 +11,12 @@ const copyToClipboard = (textToBeCopied: string) => {
   }
 }
 
-export const handleCopyConstructedUrl = (
+export const setAndCopyConstructedUrl = (
   url: string,
+  setConstructedUrl: React.Dispatch<React.SetStateAction<string>>,
   setToastVisible: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
+  setConstructedUrl(url)
   copyToClipboard(url)
   displayToast(setToastVisible)
 }

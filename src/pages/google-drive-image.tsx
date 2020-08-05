@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import ConstructorLayout from '../components/Layouts/constructor-layout'
-import { handleCopyConstructedUrl } from '../services/common-service'
+import { setAndCopyConstructedUrl } from '../services/common-service'
 import { constructGDriveImageUrl } from '../services/google-drive-image-service'
+import ConstructorInput from '../components/Constructor/constructor-input'
 
 const GoogleDriveImageUrl: React.FC = () => {
   const [inputUrl, setInputUrl] = useState(null)
@@ -9,16 +10,25 @@ const GoogleDriveImageUrl: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState(null)
   const [toastVisible, setToastVisible] = useState(false)
 
-  const handleConstructButtonClick = () => {
+  const resetStates = () => {
     setErrorMessage(null)
+    setConstructedUrl(null)
+    setToastVisible(false)
+  }
+
+  const hasValidInputs = () => {
     if (!inputUrl) {
       setErrorMessage('Please input a valid Google Drive Shareable URL')
-      setConstructedUrl(null)
-    } else {
-      setToastVisible(false)
-      const constructedUrl = constructGDriveImageUrl(inputUrl)
-      setConstructedUrl(constructedUrl)
-      handleCopyConstructedUrl(constructedUrl, setToastVisible)
+      return false
+    }
+    return true
+  }
+
+  const handleConstructButtonClick = () => {
+    resetStates()
+    if (hasValidInputs()) {
+      const url = constructGDriveImageUrl(inputUrl)
+      setAndCopyConstructedUrl(url, setConstructedUrl, setToastVisible)
     }
   }
 
@@ -29,16 +39,14 @@ const GoogleDriveImageUrl: React.FC = () => {
       url={constructedUrl}
       toastVisible={toastVisible}
       handleClick={handleConstructButtonClick}
-      handleCopy={() => handleCopyConstructedUrl(constructedUrl, setToastVisible)}
+      handleCopy={() => setAndCopyConstructedUrl(constructedUrl, setConstructedUrl, setToastVisible)}
     >
-      <input
-        className="shadow appearance-none border rounded-lg w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        id="gdrive-url"
-        type="text"
+      <ConstructorInput
         placeholder="Google Drive Shareable Link"
-        onChange={(e) => setInputUrl(e.target.value)}
+        type="text"
+        errorMessage={errorMessage}
+        setInput={setInputUrl}
       />
-      <p className="text-red-600 text-left ml-3">{errorMessage}</p>
     </ConstructorLayout>
   )
 }
